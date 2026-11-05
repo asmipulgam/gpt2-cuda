@@ -1,0 +1,39 @@
+GPU: Tesla T4
+
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                                   Name    Self CPU %      Self CPU   CPU total %     CPU total  CPU time avg     Self CUDA   Self CUDA %    CUDA total  CUDA time avg    # of Calls  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+                                               generate         0.00%       0.000us         0.00%       0.000us       0.000us        1.151s       335.72%        1.151s        1.151s             1  
+                                               generate        35.42%     423.010ms        97.22%        1.161s        1.161s       0.000us         0.00%     316.446ms     316.446ms             1  
+                                            aten::addmm        10.01%     119.501ms        14.19%     169.453ms      54.312us     144.462ms        42.15%     144.462ms      46.302us          3120  
+                                           aten::linear         0.02%     265.154us         0.55%       6.589ms     101.377us       0.000us         0.00%      86.131ms       1.325ms            65  
+                                           aten::matmul         0.06%     673.649us         0.48%       5.741ms      88.324us       0.000us         0.00%      86.131ms       1.325ms            65  
+                                               aten::mm         0.21%       2.477ms         0.38%       4.555ms      70.077us      86.131ms        25.13%      86.131ms       1.325ms            65  
+void sgemm_largek_lds64<true, false, 6, 3, 4, 5, 2, ...         0.00%       0.000us         0.00%       0.000us       0.000us      79.927ms        23.32%      79.927ms       1.249ms            64  
+void gemmSN_NN_kernel<float, 256, 4, 2, 8, 4, 4, tru...         0.00%       0.000us         0.00%       0.000us       0.000us      71.982ms        21.00%      71.982ms      31.738us          2268  
+                     aten::scaled_dot_product_attention         0.89%      10.604ms         6.22%      74.288ms      95.241us       0.000us         0.00%      47.221ms      60.540us           780  
+          aten::_scaled_dot_product_efficient_attention         1.07%      12.777ms         5.33%      63.683ms      81.645us       0.000us         0.00%      47.221ms      60.540us           780  
+                     aten::_efficient_attention_forward         1.25%      14.977ms         3.17%      37.832ms      48.502us      47.221ms        13.78%      47.221ms      60.540us           780  
+fmha_cutlassF_f32_aligned_64x64_rf_sm75(PyTorchMemEf...         0.00%       0.000us         0.00%       0.000us       0.000us      47.221ms        13.78%      47.221ms      60.540us           780  
+void sgemm_largek_lds64<false, false, 6, 3, 4, 5, 2,...         0.00%       0.000us         0.00%       0.000us       0.000us      39.397ms        11.49%      39.397ms      52.112us           756  
+                                                prefill         0.00%       0.000us         0.00%       0.000us       0.000us      34.488ms        10.06%      34.488ms      34.488ms             1  
+                                  volta_sgemm_128x64_nn         0.00%       0.000us         0.00%       0.000us       0.000us      29.989ms         8.75%      29.989ms     312.382us            96  
+                                                prefill         0.89%      10.653ms         2.69%      32.105ms      32.105ms       0.000us         0.00%      26.295ms      26.295ms             1  
+                                              aten::cat         2.41%      28.774ms         4.09%      48.800ms      28.910us      25.494ms         7.44%      25.494ms      15.103us          1688  
+void at::native::(anonymous namespace)::CatArrayBatc...         0.00%       0.000us         0.00%       0.000us       0.000us      25.222ms         7.36%      25.222ms      16.168us          1560  
+                                              aten::mul         3.57%      42.612ms         5.58%      66.647ms      20.520us      10.313ms         3.01%      10.313ms       3.175us          3248  
+                                              aten::add         4.13%      49.352ms         6.51%      77.754ms      23.018us       9.241ms         2.70%       9.241ms       2.736us          3378  
+                                       aten::layer_norm         0.81%       9.674ms         7.81%      93.314ms      57.424us       0.000us         0.00%       7.604ms       4.679us          1625  
+                                aten::native_layer_norm         3.20%      38.277ms         7.00%      83.640ms      51.471us       7.604ms         2.22%       7.604ms       4.679us          1625  
+void at::native::(anonymous namespace)::vectorized_l...         0.00%       0.000us         0.00%       0.000us       0.000us       7.604ms         2.22%       7.604ms       4.679us          1625  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us       7.053ms         2.06%       7.053ms       3.014us          2340  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us       6.588ms         1.92%       6.588ms       2.741us          2404  
+                                  volta_sgemm_128x64_tn         0.00%       0.000us         0.00%       0.000us       0.000us       5.757ms         1.68%       5.757ms       5.757ms             1  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us       3.043ms         0.89%       3.043ms       3.902us           780  
+                                              aten::pow         1.24%      14.783ms         1.82%      21.787ms      27.932us       2.570ms         0.75%       2.570ms       3.295us           780  
+void at::native::vectorized_elementwise_kernel<4, at...         0.00%       0.000us         0.00%       0.000us       0.000us       2.570ms         0.75%       2.570ms       3.295us           780  
+                                             aten::tanh         0.68%       8.123ms         1.14%      13.559ms      17.383us       2.451ms         0.72%       2.451ms       3.142us           780  
+-------------------------------------------------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  ------------  
+Self CPU time total: 1.194s
+Self CUDA time total: 342.744ms
+

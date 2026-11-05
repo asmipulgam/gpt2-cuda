@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+*.so
+.pytest_cache/
+
+# Large profiler outputs (keep the CSV/markdown tables)
+benchmarks/results/*.json
+benchmarks/results/*.nsys-rep
+benchmarks/results/*.ncu-rep
+benchmarks/results/*.sqlite
+
+sycl/softmax_sycl
+.DS_Store
